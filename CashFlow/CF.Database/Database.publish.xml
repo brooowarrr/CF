@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseName>CashFlowDB</TargetDatabaseName>
+    <DeployScriptFileName>Database.sql</DeployScriptFileName>
+    <ProfileVersionNumber>1</ProfileVersionNumber>
+    <TargetConnectionString>Data Source=172.21.0.62;Integrated Security=False;User ID=sa;Password=warwolf@12;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False</TargetConnectionString>
+    <ScriptDatabaseOptions>True</ScriptDatabaseOptions>
+    <BlockOnPossibleDataLoss>True</BlockOnPossibleDataLoss>
+    <CreateNewDatabase>True</CreateNewDatabase>
+  </PropertyGroup>
+</Project>
