@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{ed3e8ff3-30a9-42a3-a004-8a7500d7e05c}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql100DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -64,7 +64,6 @@
   <ItemGroup>
     <Build Include="dbo\Tables\Categories.sql" />
     <Build Include="dbo\Tables\CategoriesDefinitions.sql" />
-    <Build Include="dbo\Tables\PendingTransactions.sql" />
     <Build Include="dbo\Tables\Transactions.sql" />
     <Build Include="dbo\Tables\Items.sql" />
     <Build Include="dbo\Tables\AssetsConfig.sql" />

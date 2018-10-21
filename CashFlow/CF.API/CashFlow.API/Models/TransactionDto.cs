@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace CF.DataLayer
+namespace CashFlow.API.Models
 {
-    public class Transaction
+    public class TransactionDto
     {
         public int Id { get; set; }
         public decimal Value { get; set; }
-        public Item SourceItem { get; set; }
-        public Item TargetItem { get; set; }
+        public ItemDto SourceItem { get; set; }
+        public ItemDto TargetItem { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateModified { get; set; }
         public bool IsPending { get; set; }

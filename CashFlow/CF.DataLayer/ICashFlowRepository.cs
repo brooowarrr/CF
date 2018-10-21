@@ -23,11 +23,8 @@ namespace CF.DataLayer
         bool Edit(CategoryDefinition definition);
         bool Remove(CategoryDefinition definition);
 
-        //List<Transaction> GetAllPendingTransactions();
-        //bool AddPendingTransaction(Transaction transaction);
-        //bool EditPendingTransaction(Transaction transaction);
-        //bool RemovePendingTransaction(Transaction transaction);
-        //bool FinishPendingTransaction(int transactionId);
+        List<Transaction> GetAllPendingTransactions();
+        bool FinishPendingTransaction(int transactionId);
 
         List<Transaction> GetAllTransactions();
         //List<Transaction> GetTransactionsByCategory(int categoryId);
@@ -40,4 +37,5 @@ namespace CF.DataLayer
     }
 
     //transakcje mozna wykonywac tylko z lub do Item ktory jest w assetsConfig
+    // na poczatek stan danych itemow wyliczany, pozniej moglby byc datowany na jakis dzien po kazdej transakcji
 }

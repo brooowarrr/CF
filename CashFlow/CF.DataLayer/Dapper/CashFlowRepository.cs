@@ -119,13 +119,31 @@ namespace CF.DataLayer.Dapper
             return this.db.Query<Transaction>("SELECT * FROM Transactions").ToList();
         }
 
+        public List<Transaction> GetAllPendingTransactions()
+        {
+            return this.db.Query<Transaction>("SELECT * FROM Transactions WHERE IsPending=1").ToList();
+        }
+
+        public bool FinishPendingTransaction(int transactionId)
+        {
+            var dateModified = DateTime.Now;
+            var sql =
+                "UPDATE Transactions " +
+                "SET " +
+                "DateModified = @DateModified " +
+                "IsPending = 0 " +
+                "WHERE Id = @Id";
+            this.db.Execute(sql, dateModified);
+            return true;
+        }
+
         public bool Add(Transaction transaction)
         {
             transaction.DateCreated = DateTime.Now;
             transaction.DateModified = transaction.DateCreated;
             var sql =
-                "INSERT INTO Transactions (Value, SourceItemId, TargetItemId, Description, DateCreated, DateModified) " +
-                "VALUES(@Value, @SourceItemId, @TargetItemId, @Description, @DateCreated, @DateModified); " +
+                "INSERT INTO Transactions (Value, SourceItemId, TargetItemId, Description, DateCreated, DateModified, IsPending) " +
+                "VALUES(@Value, @SourceItemId, @TargetItemId, @Description, @DateCreated, @DateModified, @DateModified, @IsPending); " +
                 "SELECT CAST(SCOPE_IDENTITY() as int)";
             transaction.Id = this.db.Query<int>(sql, transaction).Single();
             return true;
@@ -142,6 +160,7 @@ namespace CF.DataLayer.Dapper
                 "Description = @Description, " +
                 "DateCreated = @DateCreated, " +
                 "DateModified = @DateModified " +
+                "IsPending = @IsPending " +
                 "WHERE Id = @Id";
             this.db.Execute(sql, transaction);
             return true;

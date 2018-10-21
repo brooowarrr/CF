@@ -75,9 +75,9 @@ INSERT [dbo].[CategoriesDefinitions] ([CategoryId], [ItemId]) VALUES (9, 21)
 
 
 /***** SEED DATA FOR Transactions TABLE *****/
-INSERT [dbo].[Transactions] ([Value], [SourceItemId], [TargetItemId], [Description], [DateCreated], [DateModified]) VALUES (50000, 22, 13, N'Poczatkowy stan konta', '2018-12-31 12:00:00', '2018-12-31 12:00:00')
-INSERT [dbo].[Transactions] ([Value], [SourceItemId], [TargetItemId], [Description], [DateCreated], [DateModified]) VALUES (1000, 13, 14, N'Poczatkowy stan gotówki', '2018-12-31 12:00:00', '2018-12-31 12:00:00')
-INSERT [dbo].[Transactions] ([Value], [SourceItemId], [TargetItemId], [Description], [DateCreated], [DateModified]) VALUES (10000, 13, 20, N'Przelew na rachunek giełdowy', '2018-12-31 13:00:00', '2018-12-31 13:00:00')
+INSERT [dbo].[Transactions] ([Value], [SourceItemId], [TargetItemId], [Description], [DateCreated], [DateModified], [IsPending]) VALUES (50000, 22, 13, N'Poczatkowy stan konta', '2018-12-31 12:00:00', '2018-12-31 12:00:00', 0)
+INSERT [dbo].[Transactions] ([Value], [SourceItemId], [TargetItemId], [Description], [DateCreated], [DateModified], [IsPending]) VALUES (1000, 13, 14, N'Poczatkowy stan gotówki', '2018-12-31 12:00:00', '2018-12-31 12:00:00', 0)
+INSERT [dbo].[Transactions] ([Value], [SourceItemId], [TargetItemId], [Description], [DateCreated], [DateModified], [IsPending]) VALUES (10000, 13, 20, N'Przelew na rachunek giełdowy', '2018-12-31 13:00:00', '2018-12-31 13:00:00', 0)
 
 
 
